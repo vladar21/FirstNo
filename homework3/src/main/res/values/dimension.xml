@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="fontSize">36sp</dimen>
-    <dimen name="buttonFontSize">23sp</dimen>
-    <dimen name="buttonPadding">26dp</dimen>
+    <dimen name="buttonFontSize">21sp</dimen>
+    <dimen name="buttonPadding">0dp</dimen>
     <dimen name="paddingVerticale">17dp</dimen>
+    <dimen name="fontSizePlusMinus">10sp</dimen>
 </resources>

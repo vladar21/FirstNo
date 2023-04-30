@@ -9,9 +9,8 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_margin="5dp"
         android:background="@color/black"
         android:baselineAligned="false"
         android:orientation="vertical"
@@ -19,22 +18,20 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/resultOnScreen"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@color/black"
                 android:hint="0.0"
                 android:paddingVertical="@dimen/paddingVerticale"
-                android:paddingLeft="10dp"
+                android:padding="5dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                android:textSize="@dimen/fontSize"
-                android:textStyle="normal" />
+                android:textSize="@dimen/fontSize" />
         </LinearLayout>
 
         <LinearLayout
@@ -45,52 +42,52 @@
 
             <Button
                 android:id="@+id/buttonClear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/buttonClear"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/buttonPlusMinus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/buttonPlusMinus"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/buttonModuleDivide"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/buttonModuleDivide"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/buttonDivide"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/red"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/buttonDivide"
-                android:textSize="23dp" />
+                android:textSize="@dimen/buttonFontSize" />
         </LinearLayout>
 
         <LinearLayout
@@ -101,52 +98,52 @@
 
             <Button
                 android:id="@+id/button7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/button7"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/button8"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/button9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/button9"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/buttonMultiply"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/red"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/buttonMultiply"
-                android:textSize="23dp" />
+                android:textSize="@dimen/buttonFontSize" />
         </LinearLayout>
 
         <LinearLayout
@@ -157,52 +154,52 @@
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/button4"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/button5"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/button6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/button6"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/buttonMinus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/red"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/buttonMinus"
-                android:textSize="23dp" />
+                android:textSize="@dimen/buttonFontSize" />
         </LinearLayout>
 
         <LinearLayout
@@ -213,52 +210,52 @@
 
             <Button
                 android:id="@+id/button1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/button1"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/button2"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/button3"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/buttonPlus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.25"
                 android:backgroundTint="@color/red"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/buttonPlus"
-                android:textSize="23dp" />
+                android:textSize="@dimen/buttonFontSize" />
         </LinearLayout>
 
         <LinearLayout
@@ -269,19 +266,19 @@
 
             <Button
                 android:id="@+id/button0"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.66"
                 android:backgroundTint="@color/white"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/button0"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/buttonDot"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
@@ -289,19 +286,19 @@
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/buttonDot"
                 android:textColor="@color/black"
-                android:textSize="23dp"
+                android:textSize="@dimen/buttonFontSize"
                 app:rippleColor="#00FE68" />
 
             <Button
                 android:id="@+id/buttonEqual"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/red"
                 android:padding="@dimen/buttonPadding"
                 android:text="@string/buttonEqual"
-                android:textSize="23dp" />
+                android:textSize="@dimen/buttonFontSize" />
 
         </LinearLayout>
 
