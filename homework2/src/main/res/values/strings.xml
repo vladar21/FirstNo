@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Homework2</string>
+    <string name="fio">ФИО</string>
+    <string name="fioExample">Фамилия Имя Отчество</string>
+    <string name="old">Возраст</string>
+    <string name="oldExample">Введите сколько вам лет</string>
+    <string name="salary">Урoвень ЗП</string>
+    <string name="salaryExample">Укажите уровень зарплаты</string>
+    <string name="radioButtonGroup1">1) Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</string>
+    <string name="RadioButton11">RB11</string>
+    <string name="radioButton12">RB12</string>
+    <string name="radioButton13">RB13</string>
+    <string name="radioButton14">RB14</string>
+    <string name="radioButtonGroup2">2) Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</string>
+    <string name="RadioButton21">RB21</string>
+    <string name="radioButton22">RB22</string>
+    <string name="radioButton23">RB23</string>
+    <string name="radioButton24">RB24</string>
+    <string name="radioButtonGroup3">3) Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</string>
+    <string name="RadioButton31">RB31</string>
+    <string name="radioButton32">RB32</string>
+    <string name="radioButton33">RB33</string>
+    <string name="radioButton34">RB34</string>
+    <string name="radioButtonGroup4">4) Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</string>
+    <string name="RadioButton41">RB41</string>
+    <string name="radioButton42">RB42</string>
+    <string name="radioButton43">RB43</string>
+    <string name="radioButton44">RB44</string>
+    <string name="radioButtonGroup5">5) Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</string>
+    <string name="RadioButton51">RB51</string>
+    <string name="radioButton52">RB52</string>
+    <string name="radioButton53">RB53</string>
+    <string name="radioButton54">RB54</string>
+    <string name="experienceTitle">Опыт работы</string>
+    <string name="teamSkills">Навыки командной разработки</string>
+    <string name="readyToTrip">Готовность к командировкам</string>
+    <string name="resultButton">Сдать тест</string>
+    <string name="resultTitle"><b>Результат:</b></string>
+
+
+</resources>

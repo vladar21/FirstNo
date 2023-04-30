@@ -1,0 +1,24 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "FirstNo"
+include ':app'
+include ':run-activities-demo'
+include ':myapplication'
+include ':displaycalculator'
+include ':hometask2'
+include ':classwork3'
+include ':homework2'
+include ':homework3'
+include ':classwork4'

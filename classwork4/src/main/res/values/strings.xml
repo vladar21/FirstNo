@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">classwork4</string>
+    <array name="countries">
+        <item>USA</item>
+        <item>Ukraine</item>
+        <item>Canada</item>
+        <item>France</item>
+    </array>
+    <array name="users">
+        <item>Вася Пупкин</item>
+        <item>Иван Ивано</item>
+        <item>Петр Петров</item>
+    </array>
+</resources>
