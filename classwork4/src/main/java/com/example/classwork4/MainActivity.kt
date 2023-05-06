@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -78,6 +79,32 @@ class MainActivity : AppCompatActivity() {
 
         val usersSpinner: Spinner = findViewById(R.id.usersSpinner)
         usersSpinner.adapter = UserAdapter(this, users)
+
+
+//        listview
+        val listView: ListView = findViewById(R.id.countryListView)
+        val countryAdapter = CountryAdapter(this, countries)
+        //val listViewCountryAdapter = CountryAdapter(this, countries)
+        listView.adapter = countryAdapter //listViewCountryAdapter
+
+        listView.setOnItemClickListener { parent, view, position, id ->
+            Snackbar.make(
+                this, listView, "Country ${countries[position].name}",
+                Snackbar.LENGTH_SHORT
+            )
+//                Snackbar.LENGTH_INDEFINITE)
+//                .setAction("OK"){
+//
+//                }
+                .show()
+        }
+        listView.onItemLongClickListener =
+            AdapterView.OnItemLongClickListener { parent, view, position, id ->
+                countries.removeAt(position)
+                countryAdapter.notifyDataSetChanged()
+                Toast.makeText(this, "Countries: ${countries.count()}", Toast.LENGTH_SHORT).show()
+                true
+            }
 
     }
 }
