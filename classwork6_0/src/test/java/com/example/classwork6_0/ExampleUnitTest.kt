@@ -1,4 +1,4 @@
-package com.example.classwork6
+package com.example.classwork6_0
 
 import org.junit.Test
 
