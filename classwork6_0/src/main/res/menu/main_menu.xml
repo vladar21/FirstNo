@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+<!--    <item-->
+<!--        android:id="@+id/app_bar_switch"-->
+<!--        android:title="Switch"-->
+<!--        app:actionLayout="@layout/switch_item"-->
+<!--        app:showAsAction="always" />-->
+    <item
+        android:id="@+id/item_1"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Item 1" />
+    <item
+        android:id="@+id/item_2"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_lock_idle_alarm"
+        android:title="Item 2" />
+<!--    <item android:title="Item 3" >-->
+<!--        <menu >-->
+            <item
+                android:checkable="true"
+                android:checked="true"
+                android:id="@+id/subitem_1"
+                app:showAsAction="ifRoom"
+                android:icon="@android:drawable/ic_menu_add"
+                android:title="SubItem 1" />
+            <item
+                android:id="@+id/subitem_2"
+                app:showAsAction="ifRoom"
+                android:icon="@android:drawable/ic_menu_edit"
+                android:title="SubItem 2" />
+<!--        </menu>-->
+<!--    </item>-->
+</menu>
