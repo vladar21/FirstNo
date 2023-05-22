@@ -8,6 +8,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstNo">
         <activity
+            android:name=".FavoritesActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

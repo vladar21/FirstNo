@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Droid Desserts</string>
-    <string name="close_app_choice">Close app</string>
+    <string name="app_name">Droid Caffe</string>
+    <string name="close_app_choice">Exit</string>
 </resources>

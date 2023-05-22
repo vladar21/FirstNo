@@ -1,44 +1,37 @@
 package com.example.homework6
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcel
+import android.os.Parcelable
 import android.view.*
 import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.system.exitProcess
 
+
 class MainActivity : AppCompatActivity() {
-    private var data: MutableList<Good> = mutableListOf()
+
+    var favorites: MutableList<Item> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        data = mutableListOf(
-            Good( R.drawable.ireland, "FJDSFJ:SDFJ:SDLFKJ:SDLFJS:FLJS:FJS:DFSFS:F"),
-            Good(R.drawable.usa, "Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc."),
-            Good(R.drawable.ua, "Nullam eget nisl. Donec vitae arcu. Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada."),
-            Good(R.drawable.uk, "Mauris tincidunt sem sed arcu. Nunc posuere. Nullam lectus justo, vulputate eget, mollis sed, tempor sed, magna."),
-            Good(R.drawable.un, "Etiam neque. Curabitur ligula sapien, pulvinar a, vestibulum quis, facilisis vel, sapien."),
-            Good(R.drawable.user1, "Morbi a metus. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Nullam sapien sem, ornare ac, nonummy non."),
-            Good(R.drawable.user2, "Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc."),
-            Good(R.drawable.user3, "Maecenas ipsum velit, consectetuer eu, lobortis ut, dictum at, dui. In rutrum. Sed ac dolor sit amet purus."),
+        val items = listOf(
+            Item(R.drawable.sample_1, "Lorem ipsum dolor sit amet. Sed voluptatum corporis aut fuga sapiente."),
+            Item(R.drawable.sample_3, "Sit voluptatem impedit et voluptatem suscipit. Quasi est debitis quibusdam."),
+            Item(R.drawable.sample_6, "Ut sunt internos ad expedita quisquam ea autem animi quo distinctio.")
         )
 
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
-        val adapter = RecycleAdapter(data)
-        {
-//                good ->
-//            val dialog = AlertDialog.Builder(this)
-//                .setTitle(good.title)
-//                .setMessage(good.fullText)
-//                .setPositiveButton("OK", null)
-//                .create()
-//            dialog.show()
-        }
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerview)
+        val adapter = ItemAdapter(items, favorites)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -46,9 +39,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu (menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate (R.menu.main_menu, menu)
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.options_menu, menu)
         return true
     }
 
@@ -60,38 +53,101 @@ class MainActivity : AppCompatActivity() {
                 moveTaskToBack(true);
                 exitProcess(-1)
             }
+            R.id.cart -> {
+                // Show cart action
+                true
+            }
+            R.id.favorites -> {
+//                val intent = Intent(this, FavoritesActivity::class.java)
+//                intent.putExtra("favorites", ArrayList(favorites))
+//                startActivity(intent)
+                val intent = Intent(this@MainActivity, FavoritesActivity::class.java)
+                intent.putParcelableArrayListExtra("favoritesList", ArrayList(favorites))
+                startActivity(intent)
+                true
+            }
 
         }
         return super.onOptionsItemSelected(item)
     }
-}
 
-data class Good(val flagId: Int, val fullText: String)
+//    data class Item(val imageview: Int, val textView: String) : Parcelable {
+//        constructor(parcel: Parcel) : this(
+//            parcel.readInt(),
+//            parcel.readString()!!
+//        )
+//
+//        override fun writeToParcel(parcel: Parcel, flags: Int) {
+//            parcel.writeInt(imageview)
+//            parcel.writeString(textView)
+//        }
+//
+//        override fun describeContents(): Int {
+//            return 0
+//        }
+//
+//        companion object CREATOR : Parcelable.Creator<Item> {
+//            override fun createFromParcel(parcel: Parcel): Item {
+//                return Item(parcel)
+//            }
+//
+//            override fun newArray(size: Int): Array<Item?> {
+//                return arrayOfNulls(size)
+//            }
+//        }
+//    }
 
-class RecycleAdapter(private val goods: List<Good>, private val listener: (Good) -> Unit) : RecyclerView.Adapter<RecycleAdapter.ViewHolder>() {
+    class ItemAdapter(private val items: List<Item>, private val favorites: MutableList<Item>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.good_item, parent, false)
-        return ViewHolder(view)
-    }
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
+            return ViewHolder(view)
+        }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val good = goods[position]
-        holder.imageView.setImageResource(good.flagId)
-        holder.fullText.text = good.fullText
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+            holder.imageView.setImageResource(items[position].imageview)
+            holder.textView.text = items[position].textView
 
-        holder.itemView.setOnClickListener {
-            listener(good)
+            holder.itemView.setOnClickListener {
+                val popup = PopupMenu(holder.itemView.context, holder.itemView)
+                popup.inflate(R.menu.popup_menu)
+
+                popup.setOnMenuItemClickListener { item ->
+                    when (item.itemId) {
+                        R.id.cart -> {
+                            // Add to cart action
+                            true
+                        }
+                        R.id.favorites -> {
+                            val item = items[position]
+                            favorites.add(item)
+                            true
+                        }
+                        else -> false
+                    }
+                }
+
+                popup.show()
+            }
+        }
+
+
+        override fun getItemCount(): Int = items.size
+
+        inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+            val imageView: ImageView = itemView.findViewById(R.id.imageview)
+            val textView: TextView = itemView.findViewById(R.id.textview)
+
+            fun bind(item: Item) {
+                imageView.setImageResource(item.imageview)
+                textView.text = item.textView
+            }
         }
     }
 
-    override fun getItemCount(): Int {
-        return goods.size
-    }
-
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val fullText: TextView = itemView.findViewById(R.id.fullText)
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
-    }
 
 }
+
+
+
+
