@@ -1,6 +1,5 @@
 package com.example.homework6
 
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
@@ -11,30 +10,29 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.system.exitProcess
 
-class FavoritesActivity : AppCompatActivity() {
-
-    var favorites: MutableList<Item> = mutableListOf()
+class CartsActivity : AppCompatActivity() {
+    var carts: MutableList<Item> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_favorites)
+        setContentView(R.layout.activity_carts)
 
-        favorites = (intent.getSerializableExtra("favoritesList") as? MutableList<Item>)!!
-        if (favorites != null) {
+        carts = (intent.getSerializableExtra("cartsList") as? MutableList<Item>)!!
+
+        if (carts != null) {
             val recyclerView: RecyclerView = findViewById(R.id.recyclerViewFavorites)
-            val adapter = ItemAdapter(favorites)
+            val adapter = ItemAdapter(carts)
             recyclerView.adapter = adapter
             recyclerView.layoutManager = LinearLayoutManager(this)
 
             adapter.notifyDataSetChanged()
         }
 
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.favorites_activity_menu, menu)
+        inflater.inflate(R.menu.cats_activity_menu, menu)
         return true
     }
 

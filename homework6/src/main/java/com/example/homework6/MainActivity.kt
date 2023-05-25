@@ -19,6 +19,7 @@ import kotlin.system.exitProcess
 class MainActivity : AppCompatActivity() {
 
     var favorites: MutableList<Item> = mutableListOf()
+    var carts: MutableList<Item> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerview)
-        val adapter = ItemAdapter(items, favorites)
+        val adapter = ItemAdapter(items, favorites, carts)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -54,13 +55,12 @@ class MainActivity : AppCompatActivity() {
                 exitProcess(-1)
             }
             R.id.cart -> {
-                // Show cart action
+                val intent = Intent(this@MainActivity, CartsActivity::class.java)
+                intent.putParcelableArrayListExtra("cartsList", ArrayList(carts))
+                startActivity(intent)
                 true
             }
             R.id.favorites -> {
-//                val intent = Intent(this, FavoritesActivity::class.java)
-//                intent.putExtra("favorites", ArrayList(favorites))
-//                startActivity(intent)
                 val intent = Intent(this@MainActivity, FavoritesActivity::class.java)
                 intent.putParcelableArrayListExtra("favoritesList", ArrayList(favorites))
                 startActivity(intent)
@@ -71,33 +71,10 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-//    data class Item(val imageview: Int, val textView: String) : Parcelable {
-//        constructor(parcel: Parcel) : this(
-//            parcel.readInt(),
-//            parcel.readString()!!
-//        )
-//
-//        override fun writeToParcel(parcel: Parcel, flags: Int) {
-//            parcel.writeInt(imageview)
-//            parcel.writeString(textView)
-//        }
-//
-//        override fun describeContents(): Int {
-//            return 0
-//        }
-//
-//        companion object CREATOR : Parcelable.Creator<Item> {
-//            override fun createFromParcel(parcel: Parcel): Item {
-//                return Item(parcel)
-//            }
-//
-//            override fun newArray(size: Int): Array<Item?> {
-//                return arrayOfNulls(size)
-//            }
-//        }
-//    }
-
-    class ItemAdapter(private val items: List<Item>, private val favorites: MutableList<Item>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+    class ItemAdapter(private val items: List<Item>,
+                      private val favorites: MutableList<Item>,
+                      private val carts: MutableList<Item>)
+        : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
@@ -115,7 +92,8 @@ class MainActivity : AppCompatActivity() {
                 popup.setOnMenuItemClickListener { item ->
                     when (item.itemId) {
                         R.id.cart -> {
-                            // Add to cart action
+                            val item = items[position]
+                            carts.add(item)
                             true
                         }
                         R.id.favorites -> {
