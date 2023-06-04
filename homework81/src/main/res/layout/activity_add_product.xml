@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"/>
+
+    <EditText
+        android:id="@+id/product_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Count"/>
+
+    <EditText
+        android:id="@+id/list_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="List ID"/>
+
+    <CheckBox
+        android:id="@+id/checked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Checked"/>
+
+    <EditText
+        android:id="@+id/count_type_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Count Type ID"/>
+
+    <Button
+        android:id="@+id/add_product_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Product"/>
+
+</LinearLayout>
